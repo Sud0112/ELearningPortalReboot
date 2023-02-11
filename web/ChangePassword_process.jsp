@@ -1,0 +1,50 @@
+<%-- 
+    Document   : index
+    Created on : 16-Jan-2021, 8:32:33 pm
+    Author     : Sudhanshu D
+--%>
+<%@page import="java.lang.System.Logger.Level"%>
+<%@page import="java.lang.System.Logger"%>
+<%@page import="java.lang.System.Logger"%>
+<%@page import="com.asas.bank.LoginServlet"%>
+<%@page import="com.asas.bank.database.DatabaseOperations"%>
+<%@page import="java.sql.*"%>
+<%@page import="com.asas.bank.database.JDBCConnection"%>
+<%@page import="com.asas.bank.model.AccountModel"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html  >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Bank of Amrita</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <%
+            session.invalidate();
+        %>
+        <div class="row">
+            <jsp:include page="header.jsp" />
+        </div>
+        <div class="container-fullwidth">
+            <div class="row" style="margin-top: 50px;">
+                <div class="alert alert-success col-md-4 col-md-offset-4"
+                     role="alert">
+                    <h4 class="alert-heading">Success!</h4>
+                    <p>
+                        <strong>Changed Password Successfully. Please Log In With New Credentials. </strong>
+                    </p>				
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <jsp:include page="footer.jsp"></jsp:include>
+            </div>
+        </div>
+    </body>
+</html>
