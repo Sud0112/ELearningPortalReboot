@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: dummy-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    restart: always
+
+  db:
+    image: mysql:5.7
+    container_name: dummy-db
+    environment:
+      MYSQL_ROOT_PASSWORD: examplepassword
+      MYSQL_DATABASE: testdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    restart: always
+
+volumes:
+  db-data:
